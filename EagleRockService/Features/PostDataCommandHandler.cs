@@ -3,10 +3,8 @@ using EagleRockService.Features.Common;
 using EagleRockService.Helpers;
 using EagleRockService.Models;
 using EagleRockService.Services;
-using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
 using OneOf;
-using System.Text;
 
 namespace EagleRockService.Features
 {

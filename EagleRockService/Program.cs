@@ -1,13 +1,10 @@
-using Autofac.Extensions.DependencyInjection;
 using Autofac;
-using EagleRockService.Helpers;
+using Autofac.Extensions.DependencyInjection;
 using EagleRockService.Infra;
 using EagleRockService.Middleware;
-using Serilog;
-using EagleRockService.Features;
-using StackExchange.Redis;
 using EagleRockService.Services;
-using AutoMapper;
+using Serilog;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,12 +29,6 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
     containerBuilder.RegisterAssemblyModules(typeof(MediatorModule).Assembly);
     containerBuilder.RegisterAssemblyModules(typeof(Program).Assembly);
 });
-//var config = new MapperConfiguration(cfg =>
-//{
-//    cfg.AddProfile<MappingProfile>();
-//});
-
-//IMapper mapper = config.CreateMapper();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 

@@ -2,8 +2,6 @@
 using EagleRockService.Models;
 using EagleRockService.Services;
 using OneOf;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using Newtonsoft.Json;
 
 namespace EagleRockService.Features
 {
@@ -11,6 +9,7 @@ namespace EagleRockService.Features
     {
         public GetDataRequestHandler(ICacheService cacheService) : base(cacheService)
         {
+
         }
 
         public override async Task<OneOf<IList<EagleBot>, ReturnTypes.InternalError, ReturnTypes.BadRequest>> Handle(GetDataRequest request,
