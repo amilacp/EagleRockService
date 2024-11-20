@@ -1,5 +1,7 @@
-﻿using MediatR;
+﻿using EagleRockService.Features;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace EagleRockService.Controllers
 {

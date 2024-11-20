@@ -8,7 +8,7 @@ using OneOf;
 
 namespace EagleRockService.Features
 {
-    public class PostDataCommandHandler : RequestHandler<PostDataRequest, OneOf<ReturnTypes.Success, ReturnTypes.InternalError, ReturnTypes.BadRequest>>
+    public class PostDataCommandHandler : RequestHandler<PostDataCommand, OneOf<ReturnTypes.Success, ReturnTypes.InternalError, ReturnTypes.BadRequest>>
     {
         private readonly ITimeStampProvider _timeStampProvider;
         private readonly IMapper _mapper;
@@ -18,7 +18,7 @@ namespace EagleRockService.Features
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public override async Task<OneOf<ReturnTypes.Success, ReturnTypes.InternalError, ReturnTypes.BadRequest>> Handle(PostDataRequest request, CancellationToken cancellationToken)
+        public override async Task<OneOf<ReturnTypes.Success, ReturnTypes.InternalError, ReturnTypes.BadRequest>> Handle(PostDataCommand request, CancellationToken cancellationToken)
         {
             if (CacheService == null)
             {
@@ -37,6 +37,7 @@ namespace EagleRockService.Features
 
             var eagleBot = _mapper.Map<EagleBot>(request);
             string serializedData = JsonConvert.SerializeObject(eagleBot);
+            //If history is needed, save the existing record to somewhere
             await CacheService.SetCacheValueAsync(cacheKey, serializedData, TimeSpan.FromHours(1));
             return new ReturnTypes.Success();
         }

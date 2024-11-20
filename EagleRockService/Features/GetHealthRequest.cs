@@ -1,6 +1,6 @@
 ﻿using EagleRockService.Features.Common;
 
-namespace EagleRockService.Controllers
+namespace EagleRockService.Features
 {
     public class GetHealthRequest : Request<GetHealthResponse>
     {

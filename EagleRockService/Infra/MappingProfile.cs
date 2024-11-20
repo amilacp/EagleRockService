@@ -8,7 +8,7 @@
     {
         public MappingProfile()
         {
-            CreateMap<PostDataRequest, EagleBot>();
+            CreateMap<PostDataCommand, EagleBot>();
         }
     }
 

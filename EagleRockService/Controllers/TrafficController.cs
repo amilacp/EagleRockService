@@ -22,7 +22,7 @@ namespace EagleRockService.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
         [Route("Data")]
-        public async Task<IActionResult> Data([FromBody] PostDataRequest request)
+        public async Task<IActionResult> Data([FromBody] PostDataCommand request)
         {
             var response = await Mediator.Send(request);
             return response.Match(success => NoContentAndLog(), error => ErrorAndLog(),

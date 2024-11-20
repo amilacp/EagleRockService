@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
 using EagleRockService.Features;
-using EagleRockService.Models;
 using EagleRockService.Services;
 using EagleRockService.Test.Common;
 using EagleRockService.Test.Helpers;
-using Microsoft.Extensions.Caching.Distributed;
 using Moq;
 using OneOf;
 
@@ -30,7 +28,7 @@ namespace EagleRockService.Test
             protected override async void When()
             {
                 //I would move these data to Json files
-                var request = new PostDataRequest
+                var request = new PostDataCommand
                 {
                     EagleBotId = "1232",
                     Location = "Brisbane",

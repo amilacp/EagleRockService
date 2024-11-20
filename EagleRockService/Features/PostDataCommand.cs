@@ -5,7 +5,7 @@ using OneOf;
 
 namespace EagleRockService.Features
 {
-    public class PostDataRequest : IRequest<OneOf<ReturnTypes.Success, ReturnTypes.InternalError, ReturnTypes.BadRequest>>
+    public class PostDataCommand : IRequest<OneOf<ReturnTypes.Success, ReturnTypes.InternalError, ReturnTypes.BadRequest>>
     {
         public string EagleBotId { get; set; }
         public string Location { get; set; }

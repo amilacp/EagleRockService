@@ -1,4 +1,4 @@
-﻿namespace EagleRockService.Controllers
+﻿namespace EagleRockService.Features
 {
     public class GetHealthResponse
     {
