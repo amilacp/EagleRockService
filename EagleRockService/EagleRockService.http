@@ -1,0 +1,6 @@
+@EagleRockService_HostAddress = http://localhost:5062
+
+GET {{EagleRockService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
